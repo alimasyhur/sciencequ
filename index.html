@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="widdiv=device-widdiv, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+        <title>GEOL</title>
+        <link rel="stylesheet" href="css/jquery.mobile-1.2.0.min.css">
+        <link rel="stylesheet" href="css/style.css">
+        <script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
+        <script src="js/jquery.mobile-1.2.0.min.js"></script>
+    </head>
+    <body>
+        <div data-role="page" id="home">
+            <div data-role="header">
+                <h1>GEOL</h1>
+            </div>
+            <div data-role="content">
+
+                <div class="pt-menu">
+                    <a data-theme="d" data-corners="false" data-role="button" href="#index" onclick="swapcookie();">
+                        <img src="images/delicious.png" alt="rss" style="display: block; margin: 0 auto">
+                        Start
+                    </a>
+
+                    <a data-theme="d" data-corners="false" data-role="button" href="#calculation">
+                        <img src="images/designbump.png" alt="rss" style="display: block; margin: 0 auto">
+                        Calc
+                    </a>
+
+                    <a data-theme="d" data-corners="false" data-role="button" href="#about">
+                        <img src="images/about.png" alt="rss" style="display: block; margin: 0 auto">
+                        About
+                    </a>
+
+                    <a data-theme="d" data-corners="false" data-role="button" onclick="exitFromApp();">
+                        <img src="images/exit.png" alt="mail" style="display: block; margin: 0 auto">
+                        Exit
+                    </a>
+
+                </div>
+
+            </div>
+            <div data-role="footer">
+                <h2>Mobile Portfolio</h2>
+                <p class="copyright">&copy; Copyright 2013</p>
+            </div>
+        </div>
+
+        <div data-role="page" id="index" onload="location.reload();">
+            <div data-role="header">
+                <h3>
+                    GEOL
+                </h3>
+            </div>
+            <div data-role="content">
+                <h2 style="text-align: ">Menurut kamu, dilevel berapa kepentingan kriteria berikut ini?</h2><br>	
+                <label for="select-choice-0" class="select"><strong>Harga</strong></label>
+                <select name="select-choice-0" id="harga">
+                    <option value="5">Sangat Tinggi</option>
+                    <option value="4">Tinggi</option>
+                    <option value="3">Sedang</option>
+                    <option value="2">Rendah</option>
+                    <option value="1">Sangat Rendah</option>
+                </select>
+                <label for="select-choice-0" class="select"><strong>Layar</strong></label>
+                <select name="select-choice-0" id="layar">
+                    <option value="5">Sangat Tinggi</option>
+                    <option value="4">Tinggi</option>
+                    <option value="3">Sedang</option>
+                    <option value="2">Rendah</option>
+                    <option value="1">Sangat Rendah</option>
+                </select>
+                <label for="select-choice-0" class="select"><strong>Prosesor</strong></label>
+                <select name="select-choice-0" id="prosesor">
+                    <option value="5">Sangat Tinggi</option>
+                    <option value="4">Tinggi</option>
+                    <option value="3">Sedang</option>
+                    <option value="2">Rendah</option>
+                    <option value="1">Sangat Rendah</option>
+                </select>
+                <label for="select-choice-0" class="select"><strong>Kapasitas Memori</strong></label>
+                <select name="select-choice-0" id="kapasitas_memori">
+                    <option value="5">Sangat Tinggi</option>
+                    <option value="4">Tinggi</option>
+                    <option value="3">Sedang</option>
+                    <option value="2">Rendah</option>
+                    <option value="1">Sangat Rendah</option>
+                </select>
+                <label for="select-choice-0" class="select"><strong>Tipe Memori</strong></label>
+                <select name="select-choice-0" id="tipe_memori">
+                    <option value="5">Sangat Tinggi</option>
+                    <option value="4">Tinggi</option>
+                    <option value="3">Sedang</option>
+                    <option value="2">Rendah</option>
+                    <option value="1">Sangat Rendah</option>
+                </select>
+                <label for="select-choice-0" class="select"  ><strong>Kapasitas</strong></label>
+                <select name="select-choice-0" id="harddisk">
+                    <option value="5">Sangat Tinggi</option>
+                    <option value="4">Tinggi</option>
+                    <option value="3">Sedang</option>
+                    <option value="2">Rendah</option>
+                    <option value="1">Sangat Rendah</option>
+                </select>
+                <label for="select-choice-0" class="select"><strong>Bluetooth</strong></label>
+                <select name="select-choice-0" id="bluetooth">
+                    <option value="5">Sangat Tinggi</option>
+                    <option value="4">Tinggi</option>
+                    <option value="3">Sedang</option>
+                    <option value="2">Rendah</option>
+                    <option value="1">Sangat Rendah</option>
+                </select>
+                <a data-role="button" data-theme="b" id="changePage">Lihat Hasil</a>
+            </div>
+            <!--            <div data-role="footer">
+                            <h4>Copyright @alima 2015</h4>
+                        </div>-->
+        </div> <!--content-->
+        <div data-role="page" data-dom-cache="false" id="calculation">
+            <div data-role="header">
+                <h3>GEOL-Get Your Laptop</h3>
+            </div>
+            <div data-role="content">
+                <h4>Proses Perhitungan Metode TOPSIS</h4>
+                <div data-role="collapsible">
+                    <h3>Menghitung normalized decision matrix</h3>
+                    <p>Elemen rij hasil dari normalisasi decision matrix R dengan metode Euclidean length of a vector adalah :</p>
+                    <img src="images/metode/1-normalized.png" style="width: 50%; height: 50%;">
+                    <p> Rij = hasil dari normalisasi matriks keputusan R<br>i = 1,2,3,...,m;<br>j = 1,2,3,...,n;</p>
+                </div>
+                <div data-role="collapsible">
+                    <h3>Menghitung weighted normalized decision matrix</h3>
+                    <p>Dengan bobot W = (w1,w2,....,wn), maka normalisasi bobot matriks V adalah :</p>
+                    <img src="images/metode/2-weight.png" style="width: 50%; height: 50%;">
+                </div>
+                <div data-role="collapsible">
+                    <h3>Menentukan solusi ideal positif dan solusi ideal negatif</h3>
+                    <p>Solusi ideal positif dinotasikan dengan A + dan solusi ideal negatif dinotasikan dengan A - , sebagai berikut : Menentukan solusi ideal (+) dan (-)</p>
+                    <img src="images/metode/3-solusiIdeal.png" style="width: 80%; height: 80%;">
+                    <p>Dimana :<br>
+                        Vij = elemen matriks V baris ke-i dan kolom ke-j<br>
+                        J = {j=1,2,3,...,n dan j berhubungan dengan benefit criteria}<br>
+                        J' = {j=1,2,3,...,n dan j berhubungan dengan cost criteria}</p>
+                </div>
+                <div data-role="collapsible">
+                    <h3>Menghitung Separasi</h3>
+                    <p>Separation measure ini merupakan pengukuran jarak dari suatu alternatif ke solusi ideal positif dan solusi ideal negatif. Perhitungan matematisnya adalah sebagai berikut :</p>
+                    <p><strong>Separation measure untuk solusi ideal positif</strong></p>
+                    <img src="images/metode/4-separasiPositif.png" style="width: 80%; height: 80%;">
+                    <p>Dimana :</p>
+                    <p>J= {j=1,2,3,...,n dan j merupakan benefit criteria} </p>
+                    <p>J’ = {j=1,2,3,...,n dan j merupakan cost criteria}</p>
+                    <p>Separation measure untuk solusi ideal negatif</p>
+                    <img src="images/metode/5-separasiNegatif.png" style="width: 80%; height: 80%;">
+                    <p>Dimana :</p>
+                    <p>J = {j=1,2,3,...,n dan j merupakan benefit criteria} </p>
+                    <p>J’ = {j=1,2,3,...,n dan j merupakan cost criteria}</p>
+                </div>
+                <div data-role="collapsible">
+                    <h3>Menghitung kedekatan relatif terhadap solusi ideal</h3>
+                    <p>Kedekatan relatif dari alternatif A + dengan solusi ideal A - direpresentasikan dengan :</p>
+                    <img src="images/metode/6-kedekatanRelativ.png" style="width: 80%; height: 80%;">
+                </div>
+                <div data-role="collapsible">
+                    <h3>Merangking alternatif</h3>
+                    <p>Alternatif dapat diranking berdasarkan urutan</p>
+                    <img src="images/metode/7-rangking.png" style="width: 20%; height: 20%;">
+                    <p>Maka dari itu, alternatif terbaik adalah salah satu yang berjarak terpendek terhadap solusiideal dan berjarak terjauh dengan solusi ideal negatif.</p>
+                </div>
+                <a data-role="button" data-theme="b" href="#home">Back to Menu</a>
+            </div>
+
+        </div>
+        <div data-role="page" data-dom-cache="false" id="about">
+            <div data-role="header">
+                <h3>GEOL-Get Your Laptop</h3>
+            </div>
+            <div data-role="content">
+                <h4>Tentang Metode TOPSIS</h4>
+            </div>
+            <div data-role="content">
+                <p style="text-align: justify;">Sistem pendukung keputusan (SPK) atau sering disebut DSS 
+                    (Decision Support System) merupakan salah satu cabang 
+                    keilmuan di bidang kecerdasan buatan (Artifical Intelligence)
+                    yang merupakan bagian dari sistem informasi berbasis komputer. 
+                    Dimana aplikasi komputer tersebut mengeluarkan keputusan untuk 
+                    menjadi pertimbangan user atau pemakai. SPK merupakan proses 
+                    pemilihan alternatif tindakan untuk mencapai tujuan atau sasaran tertentu. 
+                    Pengambilan keputusan dilakukan dengan pendekatan sistematis terhadap 
+                    permasalahan melalui proses pengumpulan data menjadi informasi 
+                    serta ditambah dengan faktor-faktor yang perlu dipertimbangkan 
+                    dalam pengambilan keputusan.<br>
+                    Metode yang dipakai dalam sistem pendukung
+                    keputusan pemilihan laptop ini adalah Technique For
+                    Order Preference by Similarity to Ideal Solution
+                    (TOPSIS). TOPSIS merupakan suatu bentuk metode
+                    pendukung keputusan yang didasarkan pada konsep
+                    bahwa alternatif yang terbaik tidak hanya memiliki
+                    jarak terpendek dari solusi ideal positif tetapi juga
+                    memiliki jarak terpanjang dari solusi ideal negatif
+                    yang dalam hal ini akan memberikan rekomendasi
+                    pemilihan laptop yang sesuai dengan yang diharapkan.
+                    Konsep ini banyak digunakan untuk menyelesaikan
+                    masalah keputusan secara praktis. Konsepnya
+                    sederhana dan mudah dipahami, komputasinya efisien
+                    dan memiliki kemampuan untuk mengukur kinerja
+                    relatif dari alternatif-alternatif keputusan dalam bentuk
+                    matematis yang sederhana (Kusumadewi, 2006).
+                    Konsep fundamental dari metode ini adalah penentuan
+                    dari jarak Euclide terpendek dari solusi ideal positif dan jarak<br>
+                    Sistem pendukung keputusan pemilihan laptop
+                    dengan metode TOPSIS ini dipilih karena mampu
+                    memilih alternatif terbaik dari sejumlah alternatif.
+                    Dalam hal ini alternatif yang dimaksud adalah laptop
+                    terbaik berdasarkan kriteria-kriteria yang ditentukan
+                    dengan langkah-langkah metode TOPSIS yang
+                    sederhana, mudah dipahami, efektif dan efisien. Hasil
+                    dari proses pengimplementasian metode TOPSIS ini
+                    dapat mengurutkan alternatif dari nilai yang terbesar
+                    ke nilai yang terkecil, sehingga diharapkan laptop
+                    yang direkomendasikan benar-benar sesuai dengan
+                    keinginan, kebutuhan, dan kemampuan konsumen.</p>
+                <!--<a data-role="button" data-icon="back" href="#index">Restart</a>-->
+                <a data-role="button" data-theme="b" href="#home">Main Menu</a>
+            </div>
+
+        </div>
+        <div data-role="page" data-dom-cache="false" id="second">
+            <div data-role="header">
+                <h3>GEOL-Get Your Laptop</h3>
+            </div>
+            <div data-role="content">
+                <h4>Hasil Perhitungan</h4>
+            </div>
+            <div data-role="content">
+                <header onload="makelist();"></header>
+                <!--<a data-role="button" data-icon="back" href="#index">Restart</a>-->
+                <a data-role="button" data-theme="b" href="#home">Main Menu</a>
+            </div>
+        </div>
+        <script type="text/javascript" src="js/topsis.js"></script>
+        <script type="text/javascript">
+                    function swapcookie() {
+                        window.location.href = '#index';
+                        location.reload();
+                    }
+                    function exitFromApp()
+                    {
+                        console.log("in button");
+                        navigator.app.exitApp();
+                    }
+        </script>
+    </body>
+</html>
